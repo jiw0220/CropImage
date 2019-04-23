@@ -22,6 +22,15 @@ CropImage 是基于微信小程序 简单的实现图片剪裁功能.
 <crop-image imgUrl="{{url}}" height="{{cropHeight}}" bindconfirm="onResult" bindcancel="onCancel" />
 ``` 
 
+# 效果图
+
+#### Demo 1
+![DEMO1](https://raw.githubusercontent.com/jiw0220/CropImage/master/images/demo1.png)
+
+#### Demo 2
+
+![DEMO2](https://raw.githubusercontent.com/jiw0220/CropImage/master/images/demo2.png)
+
 # Properties
 
 1. imgUrl {String} 使用 wx.getImageInfo 加载后得到的图片地址. wx.getImageInfo 的使用方式请参照微信小程序API 注意设置小程序下载域名
