@@ -1,0 +1,30 @@
+
+
+.imgs-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 8px 0 8px;
+  height: 32px;
+  box-sizing:border-box;
+  color: #999;
+  font-size: 12px;
+}
+
+.imgs-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 4px;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+  margin: 0 4px;
+  box-sizing: border-box;
+}
+
+.img.active {
+  border: solid 1px #69f;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "DEMO1",
+  "disableScroll": true,
+  "usingComponents": {
+    "crop-image": "/components/cropImage/cropImage"
+  }
+}

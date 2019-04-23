@@ -1,0 +1,12 @@
+<view class="page">
+  <button class="btn" size="mini" bindtap="onPress" data-type="demo1">DEMO1</button>
+  <button class="btn" size="mini" bindtap="onPress" data-type="demo2">DEMO2</button>
+  <block wx:if="{{demo2Result}}">
+    <view class="result">
+      <view class="result-wrapper">
+        <image src="{{demo2Result}}" mode="aspectFit" style="width:200px;height:200px;margin-bottom:16px;" />
+        <button class="btn" size="mini" bindtap="onPressClose">关闭</button>
+      </view>
+    </view>
+  </block>
+</view>

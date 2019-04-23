@@ -1,0 +1,42 @@
+<view class="page" style="height:{{height}}px;">
+  <view class="body" style="width:{{bodyWidth}}px;height:{{bodyHeight}}px;" bindtouchstart="imageTouchStart" bindtouchmove="imageTouchMove" bindtouchend="imageTouchEnd">
+    <canvas canvas-id="canvas" style="width:{{canvasWidth}}px;height:{{canvasHeight}}px;position:absolute;left:-999999px"></canvas>
+    <view class="image-view" style="width:{{imgViewWidth}}px;height:{{imgViewHeight}}px;margin:{{imgViewMargin}}px;">
+      <image class="image" src="{{imgUrl}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;left:{{imgLeft}}px;top:{{imgTop}}px;" mode="aspectFit" bindload="onImageLoad" binderror="onImageError" />
+      <view class="cropper-wrapper">
+        <view class="cropper-view-box" style="width:{{cutWidth}}px;height:{{cutHeight}}px;left:{{cutLeft}}px;top:{{cutTop}}px">
+          <view class="cropper-dashed-h"></view>
+          <view class="cropper-dashed-v"></view>
+          <view class="cropper-border cropper-border-t"></view>
+          <view class="cropper-border cropper-border-r"></view>
+          <view class="cropper-border cropper-border-b"></view>
+          <view class="cropper-border cropper-border-l"></view>
+          <!-- <view class="cropper-point-wrapper cropper-point-wrapper-tl" data-drag="tl">
+            <view class="cropper-point"></view>
+          </view>
+          <view class="cropper-point-wrapper cropper-point-wrapper-tr" data-drag="tr">
+            <view class="cropper-point"></view>
+          </view>
+          <view class="cropper-point-wrapper cropper-point-wrapper-bl" data-drag="bl">
+            <view class="cropper-point"></view>
+          </view> -->
+          <view class="cropper-point-wrapper cropper-point-wrapper-br" data-drag="br" catchtouchstart="dragPointStart" catchtouchmove="dragPointMove" catchtouchend="dragPointEnd">
+            <view class="cropper-point"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer" style="height:{{footerHeight}}px;">
+    <button class="button" type="default" catchtap="onPressCancel">取消</button>
+    <button class="button" type="default" catchtap="onPressPreview">预览</button>
+    <button class="button" type="default" catchtap="onPressConfirm">确定</button>
+  </view>
+  <block wx:if="{{isPreview}}">
+    <view class="body" style="position:absolute;z-index:99999;left:0;top:0;width:100vw;height:{{height}}px;background-color:#000000">
+      <text style="color:#ffffff;margin-bottom:16px;">预览</text>
+      <image src="{{result}}" mode="aspectFit" style="width:{{imgViewWidth}}px;height:{{imgViewHeight}}px;margin-bottom:16px;" bindload="onResultImageLoad" />
+      <button size="mini" bindtap="onPressClose" style="width:100px;">关闭</button>
+    </view>
+  </block>
+</view>

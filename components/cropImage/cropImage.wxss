@@ -1,0 +1,185 @@
+.page {
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  background-color: #000;
+  position:relative;
+}
+
+.body {
+  box-sizing: border-box;
+  overflow: hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.image-view {
+  position: relative;
+}
+
+.image {
+  position: absolute;
+}
+
+.cropper-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.cropper-view-box {
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 0 0 9999px rgba(204, 204, 204, 0.4);
+}
+
+/* 横向虚线 */
+
+.cropper-dashed-h {
+  position: absolute;
+  top: 33.33333333%;
+  left: 0;
+  width: 100%;
+  height: 33.33333333%;
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+/* 纵向虚线 */
+
+.cropper-dashed-v {
+  position: absolute;
+  left: 33.33333333%;
+  top: 0;
+  width: 33.33333333%;
+  height: 100%;
+  border-left: 1px dashed rgba(255, 255, 255, 0.5);
+  border-right: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.cropper-border {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cropper-border-t {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+}
+
+.cropper-border-r {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.cropper-border-b {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+}
+
+.cropper-border-l {
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+/* 剪裁框的点 */
+
+.cropper-point-wrapper {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transform: translate3d(-50%, -50%, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.cropper-point-wrapper-tl {
+  left: 0;
+  top: 0;
+}
+
+.cropper-point-wrapper-tr {
+  left: 100%;
+  top: 0;
+}
+
+.cropper-point-wrapper-bl {
+  left: 0;
+  top: 100%;
+}
+
+.cropper-point-wrapper-br {
+  left: 100%;
+  top: 100%;
+}
+
+.cropper-point {
+  width: 10px;
+  height: 10px;
+  background-color: #69f;
+  opacity: 0.75;
+  border-radius: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  background-color: #000;
+}
+
+.footer-left, .footer-right {
+  width: 60px;
+}
+
+.footer-tools {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  border-radius: 0;
+  font-size: 12px;
+  color: #fff;
+  line-height: 40px;
+  background-color: transparent;
+  margin: 0;
+}
+
+.footer .button::after {
+  border: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

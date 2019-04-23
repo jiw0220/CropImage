@@ -1,0 +1,11 @@
+<view>
+  <crop-image imgUrl="{{url}}" height="{{cropHeight}}" bindconfirm="onResult" bindcancel="onCancel" />
+  <view class="imgs">
+    <view class="imgs-header">选择图片:</view>
+    <view class="imgs-body">
+      <block wx:for="{{list}}" wx:key="index">
+        <image class="img {{current===index?'active':''}}" src="{{item}}" mode="aspectFill" bindtap="onPressImg" data-index="{{index}}" />
+      </block>
+    </view>
+  </view>
+</view>
